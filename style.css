@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+:root {
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --very-dark-blue-main-bg: hsl(217, 54%, 11%);
+  --very-dark-blue-card-bg: hsl(216, 50%, 16%);
+  --very-dark-blue-line: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-color: var(--very-dark-blue-main-bg);
+  color: var(--soft-blue);
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center;
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.outer {
+  background-color: hsla(217, 54%, 11%, 0.5);
+  width: 430px;
+  height: 660px;
+  position: relative;
+  border-radius: 15px;
+}
+.card-cont {
+  position: absolute;
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(14px, 1.5rem, 24px);
+  border-radius: 15px;
+  background-color: var(--very-dark-blue-card-bg);
+}
+
+.img-cont {
+  position: relative;
+  border-radius: 15px;
+  background-color: var(--cyan);
+  overflow: hidden;
+}
+
+.img-default,
+.img-onhover {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.img-onhover {
+  width: 25%;
+}
+
+.img-onhover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.img-cont:hover .img-default {
+  opacity: 0.5;
+}
+
+.img-cont:hover .img-onhover {
+  opacity: 1;
+}
+
+.rest-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.rest-cont .text h1 {
+  cursor: pointer;
+  color: var(--white);
+  font-size: 1.5rem;
+  margin-bottom: 0.85rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.rest-cont .text h1:hover {
+  color: var(--cyan);
+}
+
+.rest-cont .text p {
+  width: 100%;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price .eth {
+  color: var(--cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.price .date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-top: 1px solid var(--soft-blue);
+  padding-top: clamp(14px, 1rem, 24px);
+  margin-top: clamp(14px, 1rem, 24px);
+}
+
+.avatar img {
+  max-width: 35px;
+  aspect-ratio: 1/1;
+  border: 1px solid var(--white);
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+
+.avatar span {
+  font-size: 0.9rem;
+  color: var(--white);
+  transition: color 0.3s ease-in-out;
+}
+
+.avatar span:hover {
+  cursor: pointer;
+  color: var(--cyan);
+  transition: color 0.3s ease-in-out;
+}
+
+.avatar span .lgt-blue {
+  color: var(--soft-blue) !important;
+}
